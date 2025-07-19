@@ -1,6 +1,7 @@
 .taskdiv{
    display: flex;
    justify-content: space-between;
+   margin: 10px 5px 10px 5px;
 }
 #left{
     display: flex;
@@ -16,7 +17,7 @@
      font-size: 16px;
 
 }
-.checkbox{
+.checkbox{ 
     /* height: 24px; */
     scale: 1.5;
 }
@@ -25,7 +26,32 @@
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+.removeButton:hover{
+    background-color: red;
 }
 .line{
     text-decoration: line-through;
+}
+
+#inputText{
+    justify-content: center;
+    scale: 1.5;
+    margin: 2rem 0rem 2rem 16rem ;
+    width: 200px;
+}
+#addbutton{
+    margin-left: 4rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 24px;
+    /* width: 48px; */
+    scale: 1.4;
+    background-color: rgb(72, 224, 72);
+}
+#addbutton:hover{
+    cursor: pointer;
+    background-color: rgb(0, 255, 0);
 }

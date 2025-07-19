@@ -7,6 +7,8 @@ let tasklist = document.getElementById("tasklist")
 let storage = JSON.parse(localStorage.getItem("tasks")) ||[];
 
 storage.forEach(function (taskobj) {
+     let click=  document.getElementById("mouseclick")
+ 
     let taskText = taskobj.text;
     let taskDate = taskobj.date;
     let div = document.createElement("div")
@@ -25,7 +27,12 @@ storage.forEach(function (taskobj) {
     //remove button 
      let removeButton = div.querySelector(".removeButton");
     removeButton.addEventListener("click", function () {
+         click.play();
         div.remove();
+          storage=storage.filter(function(task){
+return!(task.text === taskobj.text && task.date === taskobj.date);
+        })
+        localStorage.setItem("tasks", JSON.stringify(storage)); 
     });
       //checking
    let checkbox= div.querySelector(".checkbox")
@@ -39,7 +46,14 @@ storage.forEach(function (taskobj) {
 
 //add button
 addbutton.addEventListener("click", function () {
+  let click=  document.getElementById("mouseclick")
+  click.play();
     let inputValue = inputText.value.trim()
+if(inputValue=="")
+{alert("Please enter your task")
+    return;
+  
+}
 
      //first letter capital
     inputValue=inputValue.charAt(0).toUpperCase()+inputValue.slice(1)
@@ -80,7 +94,12 @@ addbutton.addEventListener("click", function () {
     //Remove button feature
     let removeButton = div.querySelector(".removeButton")
     removeButton.addEventListener("click", function () {
+         click.play();
         div.remove();
+        storage=storage.filter(function(task){
+return!(task.text === taskobj.text && task.date === taskobj.date);
+        })
+        localStorage.setItem("tasks", JSON.stringify(storage)); 
     });
 
     //clearing input field

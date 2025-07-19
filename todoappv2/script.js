@@ -1,9 +1,13 @@
 //authentication page
 let authPage = document.getElementById("authPage");
 
+//todo page
+let todo = document.getElementById("todo");
+todo.classList.add("pageDisappear");
+
 //signup page
-let createdUsername = document.getElementById("createUsername").value.trim();
-let createdPassword = document.getElementById("createdPassword").value.trim();
+let createdUsername = document.getElementById("createUsername");
+let createdPassword = document.getElementById("createdPassword");
 let createAccountButton = document.getElementById("createAccountButton");
 let signupCard = document.getElementById("signup");
 
@@ -11,8 +15,8 @@ let signupCard = document.getElementById("signup");
 
 //login page
 
-let userForLogin = document.getElementById("username").value.trim();
-let passwordForLogin = document.getElementById("password").value.trim();
+let userForLogin = document.getElementById("loginUsername")
+let passwordForLogin = document.getElementById("loginPassword")
 let LoginButton = document.getElementById("LoginButton");
 let loginCard = document.getElementById("login");
 
@@ -23,14 +27,14 @@ function userLogin() {
   // the signup thing is here
   createAccountButton.addEventListener("click", function () {
     //creating object to send the data in the local storage
-    // let userobj = {
-    //   username: createdUsername,
-    //   password: createdPassword,
-    // };
-    // users.push(userobj);
+
+    let userobj = {
+      username: createdUsername.value,
+      password: createdPassword.value,
+    };
 
     // sending the data in local storage by converting it into string
-    // localStorage.setItem("user", JSON.stringify(users));
+    localStorage.setItem("user", JSON.stringify(userobj));
 
     //displaying a success message that account is created successfully through p tag
     let successMsgContainer = document.getElementById("successMsgContainer");
@@ -51,22 +55,19 @@ function userLogin() {
 
     //after sign up process
     //checking the users username and password  and passing it to the todo app
-    // let users = JSON.parse(localStorage.getItem("user"));
-    // users.forEach((user, index) => {
-    //   let userName = user.username;
-    //   let passWord = user.password;
 
-    //   LoginButton.addEventListener("click", function () {
-    //     if (userForLogin == userName && passwordForLogin == passWord) {
-    //       console.log("hi shiva");
-    //     }
-    //   });
-    // });
+    LoginButton.addEventListener("click", function () {
+      let users = JSON.parse(localStorage.getItem("user"));
+      let username = users.username;
+      let password = users.password;
+      if (username === userForLogin.value && password === passwordForLogin.value) {
+        loginCard.classList.add("pageDisappear");
+        todo.classList.remove("pageDisappear");
+      } else {
+        alert("password wrong");
+      }
+    });
   });
-
-    
-
-    
 
   //login page
 }

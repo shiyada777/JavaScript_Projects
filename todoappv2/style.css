@@ -100,9 +100,7 @@ input{
 
 /* todo app css are below */
 
-#todo{
-  display: none;
-}
+
 .taskdiv {
   display: flex;
   justify-content: space-between;

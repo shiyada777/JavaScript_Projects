@@ -1,0 +1,61 @@
+body{
+    text-align: center;
+
+}
+#container{
+    
+     padding: 1rem;
+    border: 2px solid black;
+    width: 80vh;
+    height: 40vh;
+
+}
+.divTask{
+    /* padding-top: -1rem; */
+    display: flex;
+    justify-content:space-between;
+    
+    gap: 0.4rem;
+   
+    height: 42px;
+     width: 310px;
+     flex-wrap: wrap;
+    border: 1px solid black;
+    
+
+     
+}
+#tasktext{
+   justify-content: left;
+   color: red;
+}
+#removeButton{
+    margin:0.9rem;
+     padding: 2px 6px;
+  font-size: 12px;
+  height: 24px; ;
+
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+
+#upper{
+display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+
+}
+#inputTask{
+    padding-left: 5px;
+    font-size:large;
+    height: 28px;
+    width: 310px;
+
+}
+#addButton{
+    height: 32px;
+}

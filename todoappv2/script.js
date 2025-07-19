@@ -26,6 +26,11 @@ loginCard.classList.add("pageDisappear");
 function userLogin() {
   // the signup thing is here
   createAccountButton.addEventListener("click", function () {
+
+    //return if field is empty
+    if(createdUsername.value=="" && createdPassword.value==""){
+        return;
+    }
     //creating object to send the data in the local storage
 
     let userobj = {

@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo app</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <section id="authPage">
+        
+        <!-- sign up page here -->
+      <div id="signup" class="card">
+        <h3>Sign up</h3>
+        <p>Create your account</p>
+
+        <label for="Username">Create Username:</label>
+        <input type="text" id="createUsername" placeholder="Enter Username.. " />
+        <br /><br />
+        <label for="password">Create Password:</label>
+        <input type="password" id="createdPassword" placeholder="Enter password.." />
+        <br /><br />
+        <button id="createAccountButton">Create account</button>
+        <br><br>
+        <a href="#" id="forgotPassword">Forgot password?</a>
+        <div id="successMsgContainer"></div>
+      </div>
+
+         <!-- login page section is here -->
+      <div id="login" class="card">
+        <h3>Login</h3>
+        <label for="Username">Username:</label>
+        <input type="text" id="username" placeholder="Enter Username.. " />
+        <br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password.." />
+        <br /><br />
+         <button id="LoginButton">Login</button>
+         <br><br>
+        <a href="#" id="forgotPassword">Forgot password?</a>
+      </div>
+    </section>
+
+    <!-- signup page section is here -->
+
+    <!-- todo app section goes here -->
     <section id="todo">
-
-   
-    <center><h1>Todo App</h1></center>
-    <div id="container">
-        <input type="text" id="inputText" placeholder="Enter your task...">
+      <center><h1>Todo App</h1></center>
+      <div id="container">
+        <input type="text" id="inputText" placeholder="Enter your task..." />
         <button id="addbutton">Add Task</button>
-        <div id="tasklist">
-
-        </div>
+        <div id="tasklist"></div>
         <audio id="mouseclick" src="mouseclick.mp3"></audio>
-    </div>
-     </section>
- 
-    
+      </div>
+    </section>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
+
+

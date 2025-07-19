@@ -1,0 +1,31 @@
+.taskdiv{
+   display: flex;
+   justify-content: space-between;
+}
+#left{
+    display: flex;
+   
+}
+#right{
+       display: flex;
+       justify-content: space-between;
+       gap: 15px;
+}
+.inputTask{
+     margin-left: 10px;
+     font-size: 16px;
+
+}
+.checkbox{
+    /* height: 24px; */
+    scale: 1.5;
+}
+.removeButton{
+    background-color: rgb(229, 49, 49);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.line{
+    text-decoration: line-through;
+}

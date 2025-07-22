@@ -1,3 +1,11 @@
+
+//signup page
+let createdUsername = document.getElementById("createUsername");
+let createdPassword = document.getElementById("createdPassword");
+let createAccountButton = document.getElementById("createAccountButton");
+let signupCard = document.getElementById("signup");
+
+
 //authentication page
 let authPage = document.getElementById("authPage");
 
@@ -5,11 +13,9 @@ let authPage = document.getElementById("authPage");
 let todo = document.getElementById("todo");
 todo.classList.add("pageDisappear");
 
-//signup page
-let createdUsername = document.getElementById("createUsername");
-let createdPassword = document.getElementById("createdPassword");
-let createAccountButton = document.getElementById("createAccountButton");
-let signupCard = document.getElementById("signup");
+
+//hiding signup card at first
+   signupCard.classList.add("pageDisappear");
 
 //signup page ap
 
@@ -19,16 +25,47 @@ let userForLogin = document.getElementById("loginUsername")
 let passwordForLogin = document.getElementById("loginPassword")
 let LoginButton = document.getElementById("LoginButton");
 let loginCard = document.getElementById("login");
+let LoginButtonSignupLink = document.getElementById("LoginButtonSignupLink");
+let darkmode = document.getElementById("darkmode");
+
 
 //login page disappear at first
+
+LoginButtonSignupLink.addEventListener("click",function(){
 loginCard.classList.add("pageDisappear");
+    signupCard.classList.remove("pageDisappear");
+})
+
+//function dark mode
+
+darkmode.addEventListener("click",function (){
+ document.body.classList.toggle("darkmode");
+})
 
 function userLogin() {
+   LoginButton.addEventListener("click", function () {
+        //return if empty
+        if(userForLogin.value=="" && passwordForLogin.value==""){
+        return;
+    }
+
+      let users = JSON.parse(localStorage.getItem("user"));
+      let username = users.username;
+      let password = users.password;
+      if (username === userForLogin.value && password === passwordForLogin.value) {
+        loginCard.classList.add("pageDisappear"); 
+        todo.classList.remove("pageDisappear");
+      } else {
+        alert("password wrong");
+      }
+    });
+
+
   // the signup thing is here
   createAccountButton.addEventListener("click", function () {
 
-    //return if field is empty
-    if(createdUsername.value=="" && createdPassword.value==""){
+       //return if field is empty
+    if(createdUsername.value=="" || createdPassword==""){
         return;
     }
     //creating object to send the data in the local storage
@@ -46,32 +83,24 @@ function userLogin() {
     let notify = document.createElement("p");
     notify.innerHTML = `<p id="success">✔ Account created successfully</p>`;
     successMsgContainer.appendChild(notify);
-
+  
     //setting time for how much second the success message appears
     setTimeout(() => {
       notify.remove();
     }, 2000);
 
+     signupCard.classList.add("pageDisappear");
+     loginCard.classList.remove("pageDisappear");
+
+
     //at last clearing the input field of user name and password
     createdUsername.value = "";
-
     signupCard.classList.add("pageDisappear");
     loginCard.classList.remove("pageDisappear");
-
-    //after sign up process
+    // //after sign up process
     //checking the users username and password  and passing it to the todo app
 
-    LoginButton.addEventListener("click", function () {
-      let users = JSON.parse(localStorage.getItem("user"));
-      let username = users.username;
-      let password = users.password;
-      if (username === userForLogin.value && password === passwordForLogin.value) {
-        loginCard.classList.add("pageDisappear");
-        todo.classList.remove("pageDisappear");
-      } else {
-        alert("password wrong");
-      }
-    });
+   
   });
 
   //login page

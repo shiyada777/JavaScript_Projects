@@ -37,6 +37,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-right: 2rem;
 }
 
 /* task css  */
@@ -53,4 +54,9 @@ body {
 }
 #checkBox{
   transform: scale(1.5);
+}
+
+/* check uncheck feature */
+.done{
+    text-decoration: line-through;
 }

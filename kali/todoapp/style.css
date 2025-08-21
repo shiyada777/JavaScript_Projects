@@ -1,22 +1,56 @@
-
-body{
-    place-items: center;
-    background-color: grey;
+body {
+  background-color: grey;
 }
 
-#container{
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    gap: 2px;
-    margin-top: 50px;
+#upper{
+   margin-left: 40rem;
 }
-#inputBox{
+#container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 50px;
+}
+#inputBox {
+  height: 34px;
+  width: 300px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+#addBtn {
+  height: 38px;
+  background-color: rgb(50, 51, 48);
+  color: white;
+  cursor: pointer;
+}
+#task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#taskLeft {
+  display: flex;
+  align-items: center;
+ gap: 1.5rem;
+}
+#taskRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* task css  */
+#text{
+    font-size: 20px;
+}
+#edit{
     height: 34px;
-    padding-left: 10px;
+    width: 80px;
 }
-#addBtn{
-     height: 38px;
-     background-color:rgb(50, 51, 48);
-     color: white;
+#delete{
+      height: 34px;
+    width: 80px;
+}
+#checkBox{
+  transform: scale(1.5);
 }
